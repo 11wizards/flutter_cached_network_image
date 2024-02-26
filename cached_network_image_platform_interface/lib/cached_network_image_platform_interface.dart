@@ -10,6 +10,12 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 /// Listener for errors
 typedef ErrorListener = void Function(Object);
 
+class ImageNotFoundException implements Exception {
+  final String url;
+
+  const ImageNotFoundException(this.url);
+}
+
 /// Render options for images on the web platform.
 enum ImageRenderMethodForWeb {
   /// HtmlImage uses a default web image including default browser caching.
