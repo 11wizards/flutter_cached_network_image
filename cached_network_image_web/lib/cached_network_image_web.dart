@@ -7,7 +7,7 @@ import 'dart:ui' as ui;
 
 import 'package:cached_network_image_platform_interface'
         '/cached_network_image_platform_interface.dart' as platform
-    show ImageLoader, ImageRenderMethodForWeb;
+    show ImageLoader, ImageRenderMethodForWeb, ImageNotFoundException;
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
@@ -132,6 +132,9 @@ class ImageLoader implements platform.ImageLoader {
         }
         if (result is FileInfo) {
           final file = result.file;
+          if (file == null) {
+            throw platform.ImageNotFoundException(url);
+          }
           final bytes = await file.readAsBytes();
           final decoded = await decode(bytes);
           yield decoded;

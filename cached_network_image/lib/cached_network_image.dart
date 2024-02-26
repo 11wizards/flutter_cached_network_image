@@ -2,6 +2,8 @@
 /// Can also be used with placeholder and error widgets.
 library cached_network_image;
 
+export 'package:cached_network_image_platform_interface/cached_network_image_platform_interface.dart'
+    show ImageNotFoundException;
 export 'package:flutter_cache_manager/flutter_cache_manager.dart'
     show CacheManagerLogLevel, DownloadProgress;
 
