@@ -9,14 +9,13 @@ environment:
 
 dependencies:
   cached_network_image_platform_interface:
-    git:
-      url: git@github.com:11wizards/flutter_cached_network_image.git
-      path: cached_network_image_platform_interface
+    path: ../cached_network_image_platform_interface
   flutter:
     sdk: flutter
   flutter_cache_manager:
     git:
       url: git@github.com:11wizards/flutter_cache_manager.git
+      ref: c742f98a0ff333bc5a0166f9f2f3f3e365eda8c6
       path: flutter_cache_manager
 
 dev_dependencies:
